@@ -5,14 +5,19 @@ class Sorter{
       arr[m] = temp;
     }
     public void sort(int[] arr){
+      int smallestIndex=0;
       for(int i=0; i<arr.length;i++){
         int keyIndex=i;
         int smallest=arr[i];
+        System.out.print(arr[i]);
         if(smallest>arr[i+1]){
           smallest=arr[i+1];
+          smallestIndex=i+1;
         }
-        if(i>=arr.size){
-          /*swap key with smallest */
+        if(i+1==arr.length){
+          int temp=arr[smallestIndex];
+          arr[smallestIndex]=arr[keyIndex];
+          arr[keyIndex]=temp;
         }
         
       }
