@@ -11,12 +11,11 @@ class Sorter{
         int smallest=arr[i];
         System.out.print(arr[i]);
         for(int j=i+1; j<arr.length; j++){
-        if(smallest>arr[j]){
-          smallest=arr[j];
+        if(arr[smallestIndex]>arr[j]){
           smallestIndex=j;
         }
-        swap(arr, smallestIndex, keyIndex);
        }        
+       swap(arr, smallestIndex, keyIndex);
       }
     }
 }  
