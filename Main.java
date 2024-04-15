@@ -13,7 +13,7 @@ public class Main {
     System.out.println(moreNumbers[200]);
     printArray(numbers);
     Sorter s = new Sorter();
-
+    s.sort(numbers);
     printArray(numbers);
   
     }

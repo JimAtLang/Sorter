@@ -1,8 +1,8 @@
 class Sorter{
-    public void swap(int[] arr, int n, int m){
-      int temp = arr[n];
-      arr[n] = arr[m];
-      arr[m] = temp;
+    public void swap(int[] arr, int smallestIndex, int keyIndex){
+      int temp=arr[smallestIndex];
+      arr[smallestIndex]=arr[keyIndex];
+      arr[keyIndex]=temp;
     }
     public void sort(int[] arr){
       int smallestIndex=0;
@@ -10,17 +10,13 @@ class Sorter{
         int keyIndex=i;
         int smallest=arr[i];
         System.out.print(arr[i]);
-        if(smallest>arr[i+1]){
-          smallest=arr[i+1];
-          smallestIndex=i+1;
+        for(int j=i+1; j<arr.length; j++){
+        if(smallest>arr[j]){
+          smallest=arr[j];
+          smallestIndex=j;
         }
-        if(i+1==arr.length){
-          int temp=arr[smallestIndex];
-          arr[smallestIndex]=arr[keyIndex];
-          arr[keyIndex]=temp;
-        }
-        
+        swap(arr, smallestIndex, keyIndex);
+       }        
       }
-        
     }
 }  
